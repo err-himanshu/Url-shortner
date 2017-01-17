@@ -28,7 +28,7 @@ function loadScript( url, callback ) {
 
 // call the function taffyDb once script loaded
 //This ensure that script has been loaded
-loadScript("../js/taffyDb.js", function() {
+loadScript("js/taffyDb.js", function() {
   //intialize taffy database
    url_database = TAFFY();
 });
@@ -40,7 +40,7 @@ function shortenUrl(url){
   if(ValidateURL(url)){
       //check for url length
       var urlLength = url.length
-      if(urlLength > 0 && urlLength < 15){
+      if(urlLength > 0 && urlLength < 25){
         //generate 6 digit url based on length
           var generatedString = generateUrlString(url,7)
       }else{
