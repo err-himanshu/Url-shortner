@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="">
+    Encode Url
+  </div>
+Enter original url: <input type="text" name="originalUrl" id="originalUrl" ><br>
+<button type="submit"  onclick="encodeUrl()">Submit</button>
+<div class="">
+  Decode Url
+</div>
+Enter encoded url: <input type="text" name="encodedUrl" id="encodedUrl"><br>
+<button type="submit"  onclick="decodeUrl()">Submit</button>
+
+<div class="">
+  <h4>Shorten url list</h4>
+  <ul class="s-class" id="s-ul">
+
+  </ul>
+</div>
+
+<div class="">
+  <h4>Decoded url list</h4>
+  <ul class="d-class" id="d-ul">
+
+  </ul>
+</div>
+</body>
+<script type="text/javascript" src="../js/url-shortner.js"></script>
+</html>
+<script type="application/javascript">
+//function to shorten url
+	function encodeUrl(){
+
+    var urlString = document.getElementById('originalUrl').value;
+    if(urlString.length > 0){
+      var result = shortenUrl(urlString);
+      if(result.success === false){
+        alert(result.message);
+      }else if (result.success === true) {
+          alert("Woo!!!, successfully shorten the url");
+          var ul = document.getElementById("s-ul");
+          var li = document.createElement("li");
+          li.appendChild(document.createTextNode("URL : " + urlString + "  ************************  " + "SHORTEN URL:  " + result.encodedUrl));
+          ul.appendChild(li);
+      }else{
+        alert("Something went wrong, please try again later");
+      }
+    }else{
+      alert("Please provide a valid url");
+    }
+  }
+  //function to decode url
+
+function decodeUrl(){
+  var urlString = document.getElementById('encodedUrl').value;
+  if(urlString.length > 0){
+    var result = deshortenUrl(urlString);
+    if(result[0].success === false){
+      alert(result[0].message);
+    }
+    if (result[0].___s === true) {
+        alert("Woo!!!, successfully decoded the url");
+        var ul = document.getElementById("d-ul");
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode("ENCODED URL : " + urlString + ",   ************************   " + "ORIGINAL URL :  " + result[0].url_name));
+        ul.appendChild(li);
+    }else{
+      alert("Something went wrong, please try again later");
+    }
+  }else{
+    alert("Please provide a valid string");
+  }
+}
+
+</script>
