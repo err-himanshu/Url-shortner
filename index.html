@@ -72,5 +72,10 @@ function decodeUrl(){
     alert("Please provide a valid string");
   }
 }
+	//warn user to lost data once page is refreshed 
+window.onbeforeunload = function() {
+  return "Data will be lost if you leave the page, are you sure?";
+};
+
 
 </script>
