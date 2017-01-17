@@ -17,4 +17,4 @@
 One can also use this script to shorten a string for that undetstand the code structure of url-shorten js and remove check for  function validateDate("url") and all will be done.
 
 # DEMO
- [Demo Here](http://url-shorten.bitballoon.com/)
+ [Demo Here](http://url-shorten.bitballoon.com/){:target="_blank"}
