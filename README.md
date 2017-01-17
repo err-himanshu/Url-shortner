@@ -18,3 +18,6 @@ One can also use this script to shorten a string for that undetstand the code st
 
 # DEMO
 <a href="http://url-shorten.bitballoon.com/" target="_blank">Demo</a>
+
+# Special Thanks
+<a href="https://github.com/typicaljoe/taffydb" target="_blank">TAFFYDB</a>
